@@ -1,0 +1,285 @@
+﻿/* FavoriteRestaurants.css */
+
+/* Stilul global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.favorite-restaurants-container {
+    display: flex;
+    flex-direction: column; /* Afișează secțiunile pe verticală */
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+    background: url('./../images/2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.favorite-restaurants,
+.recommended-restaurants {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Adăugăm un spațiu între secțiuni */
+}
+
+    .favorite-restaurants ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .favorite-restaurants li {
+        position: relative;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+        .favorite-restaurants li:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    .favorite-restaurants h1,
+    .recommended-restaurants h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .favorite-restaurants h2,
+    .recommended-restaurants h2 {
+        margin: 0;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    .recommended-restaurants h2 {
+        font-size: 1em; /* Titluri mai mici pentru recomandări */
+    }
+
+.restaurant-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant-logo {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+    .restaurant-logo.mcdonalds {
+        background-image: url('./../images/restaurants/mcdonalds.jpg');
+    }
+
+    .restaurant-logo.kfc {
+        background-image: url('./../images/restaurants/kfc.jpg');
+    }
+
+    .restaurant-logo.taverna {
+        background-image: url('./../images/restaurants/taverna.jpg');
+    }
+
+    .restaurant-logo.laitalianuveteranilor {
+        background-image: url('./../images/restaurants/laitalianuveteranilor.jpg');
+    }
+
+    .restaurant-logo.zest {
+        background-image: url('./../images/restaurants/zest.jpg');
+    }
+
+    .restaurant-logo.lamariasiion {
+        background-image: url('./../images/restaurants/lamariasiion.png');
+    }
+
+    .restaurant-logo.shift {
+        background-image: url('./../images/restaurants/shift.jpg');
+    }
+
+    .restaurant-logo.hanuberarilor {
+        background-image: url('./../images/restaurants/hanuberarilor.png');
+    }
+
+    .restaurant-logo.dristor {
+        background-image: url('./../images/restaurants/dristor.jpg');
+    }
+
+.button-container {
+    margin-left: auto;
+}
+
+.edit-button,
+.delete-button {
+    border: none;
+    background: none;
+    color: blue;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-button {
+    color: red;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.add-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .add-button:hover {
+        background-color: #0056b3;
+    }
+
+.edit-container-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: opacity 0.3s ease;
+}
+
+.save-changes-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .save-changes-button:hover {
+        background-color: #0056b3;
+    }
+
+.location-list-container {
+    margin-top: 10px;
+}
+
+.location-list {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+    .location-list li {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .location-list li:hover {
+            background-color: #f5f5f5;
+        }
+
+        .location-list li:last-child {
+            border-bottom: none;
+        }
+
+    .location-list h3 {
+        text-align: center;
+        color: #007BFF;
+        margin: 10px 0;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-bottom: 2px solid #007BFF;
+        padding-bottom: 10px;
+    }
+
+.recommended-restaurants ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow-x: auto; /* Scroll orizontal */
+    white-space: nowrap; /* Previne căderea pe linie nouă */
+}
+
+.recommended-restaurants li {
+    display: inline-block; /* Afișează elementele pe o singură linie */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    .recommended-restaurants li:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.recommended-restaurant-logo {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+    .rating .star-icon {
+        color: gold;
+        margin-left: 5px;
+    }
+
+/* Styling for the small add button */
+.small-add-button {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+    .small-add-button:hover {
+        color: #0056b3;
+    }

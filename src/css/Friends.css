@@ -1,0 +1,74 @@
+﻿/* Friends.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure body takes the full height of the screen */
+    overflow: hidden; /* Prevent scrolling issues */
+}
+
+.friends-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make sure it takes the full height of the screen */
+    width: 100vw; /* Ensure it takes the full width of the screen */
+    position: relative;
+    overflow: hidden;
+}
+
+    .friends-page::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('./../images/4.jpg'); /* Ensure the correct path to your image */
+        background-size: cover;
+        background-position: center;
+        filter: blur(3px) brightness(0.7); /* Apply blur and reduce brightness */
+        z-index: -1;
+    }
+
+.friends-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.friend {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+    .friend:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+.friend-details {
+    display: none;
+}
+
+.friend:hover .friend-details {
+    display: block;
+}
+
+.friend-search-bar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

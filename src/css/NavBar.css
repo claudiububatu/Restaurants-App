@@ -1,0 +1,78 @@
+﻿/* NavBar.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-custom {
+    background-color: #007BFF; /* Bootstrap primary blue */
+    z-index: 1000; /* Asigură că navbar-ul este deasupra celorlalte elemente */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: fixed; /* Fixează navbar-ul în partea de sus */
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-nav .nav-link {
+        color: #FFFFFF; /* white */
+        font-weight: bold;
+        transition: color 0.3s, background-color 0.3s;
+        text-decoration: none;
+    }
+
+        .navbar-custom .navbar-brand.logo {
+            font-size: 1.75rem; /* mărime mai mare pentru logo */
+            letter-spacing: 3px; /* spațiere între litere */
+            font-family: 'Arial Black', sans-serif; /* fontă bold */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* umbră mărită pentru text */
+        }
+
+        .navbar-custom .navbar-brand:hover,
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #FFFFFF;
+            background-color: #0056b3; /* Bootstrap dark blue */
+            border-radius: 5px;
+        }
+
+        .navbar-custom .navbar-nav .nav-item.active .nav-link,
+        .navbar-custom .navbar-brand.active {
+            color: #FFFFFF;
+            background-color: #0056b3; /* Bootstrap dark blue */
+            border-radius: 5px;
+        }
+
+.navbar-toggler {
+    border: none;
+}
+
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.nav-item {
+    margin-right: 1rem;
+}
+
+.nav-link {
+    padding: 0.75rem 1rem;
+    display: block;
+    text-align: center;
+}
+

@@ -1,0 +1,491 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.restaurants-page {
+    padding: 20px;
+    text-align: center;
+    background-color: #dcf3ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+    .restaurants-page h1 {
+        font-size: 3rem;
+        color: #007bff;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to right, #ffffff, #dcf3ff);
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+    }
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+    .filter-container label {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .filter-container select {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        transition: border-color 0.3s ease;
+    }
+
+        .filter-container select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+.restaurants-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.restaurant-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.restaurant-logo {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+    .restaurant-logo.mcdonalds {
+        background-image: url('./../images/restaurants/mcdonalds.jpg');
+    }
+
+    .restaurant-logo.kfc {
+        background-image: url('./../images/restaurants/kfc.jpg');
+    }
+
+    .restaurant-logo.dristor {
+        background-image: url('./../images/restaurants/dristor.jpg');
+    }
+
+    .restaurant-logo.taverna {
+        background-image: url('./../images/restaurants/taverna.jpg');
+    }
+
+    .restaurant-logo.laitalianuveteranilor {
+        background-image: url('./../images/restaurants/laitalianuveteranilor.jpg');
+    }
+
+    .restaurant-logo.zest {
+        background-image: url('./../images/restaurants/zest.jpg');
+    }
+
+    .restaurant-logo.lamariasiion {
+        background-image: url('./../images/restaurants/lamariasiion.png');
+    }
+
+    .restaurant-logo.shift {
+        background-image: url('./../images/restaurants/shift.jpg');
+    }
+
+    .restaurant-logo.hanuberarilor {
+        background-image: url('./../images/restaurants/hanuberarilor.png');
+    }
+
+    .restaurant-logo.default {
+        background-image: url('./../images/restaurants/default.jpg');
+    }
+
+.restaurant-info h2 {
+    font-size: 2.5rem;
+    color: #ff6600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #ff6600;
+    padding-bottom: 10px;
+    display: inline-block;
+    background: linear-gradient(to right, #fff, #ffcc99);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-ratings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 5px;
+}
+
+.star-icon {
+    color: #FFD700;
+    margin-right: 5px;
+}
+
+.restaurant-actions {
+    margin-left: 20px;
+}
+
+.favorite-check {
+    color: green;
+}
+
+.add-favorite-icon {
+    cursor: pointer;
+    color: blue;
+    font-size: 1.5rem;
+}
+
+.location-section {
+    margin-top: 20px;
+}
+
+    .location-section h3 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+        display: inline-block;
+    }
+
+.location-list {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+    .location-list li {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .location-list li:hover {
+            background-color: #f5f5f5;
+        }
+
+        .location-list li:last-child {
+            border-bottom: none;
+        }
+
+.add-location-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: left;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+    .add-location-form h3 {
+        margin-bottom: 15px;
+    }
+
+    .add-location-form input {
+        display: block;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .add-location-form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .add-location-form button:hover {
+            background-color: #0056b3;
+        }
+
+.custom-arrow {
+    width: 60px;
+    height: 60px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 255, 0.5);
+    border-radius: 50%;
+    color: white;
+    transition: background 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+    .custom-arrow:hover {
+        background: rgba(0, 0, 139, 0.5);
+    }
+
+.prev-arrow {
+    left: -75px;
+}
+
+.next-arrow {
+    right: -75px;
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    height: 500px;
+    position: relative;
+}
+
+.reviews-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.add-review-form {
+    margin-bottom: 20px;
+}
+
+    .add-review-form input,
+    .add-review-form textarea {
+        display: block;
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .add-review-form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .add-review-form button:hover {
+            background-color: #0056b3;
+        }
+
+.review-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.review-header {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.review-content {
+    flex: 1;
+}
+
+    .review-content h4 {
+        margin: 0 0 10px;
+    }
+
+    .review-content p {
+        margin: 5px 0;
+    }
+
+.go-to-add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+    .go-to-add-button:hover {
+        background-color: #0056b3;
+    }
+
+    .go-to-add-button .fa-plus {
+        margin-right: 10px;
+    }
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Modal h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.Modal input[type="text"],
+.Modal select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.Modal button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .Modal button:hover {
+        background-color: #0056b3;
+    }
+
+.Modal input::placeholder {
+    color: #888;
+}
+
+.Modal select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="%23333" d="M0 0l4 4 4-4H0z"/></svg>') no-repeat right 10px center;
+    background-color: #fff;
+    background-size: 8px 8px;
+}
+
+    .Modal select:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    .Modal input:focus,
+    .Modal select:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
